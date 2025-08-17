@@ -1,9 +1,11 @@
 "use client";
 
-import { GroupProps, useFrame } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
+
+type GroupProps = React.ComponentProps<"group">;
 
 export default function MotorModel(props: GroupProps) {
   const group = useRef<THREE.Group>(null);
