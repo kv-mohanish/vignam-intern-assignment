@@ -4,6 +4,8 @@
 import React, { Suspense, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Float, Html, OrbitControls, useGLTF } from "@react-three/drei";
+import MotorModel from "./MotorModel";
+
 
 const COPY = {
   hero: {
