@@ -18,29 +18,6 @@ const COPY = {
   rightStat: "OVER 100,000 PARTS\nMANUFACTURED ANNUALLY",
 };
 
-// 3D Model Component
-function MotorModel(props: JSX.IntrinsicElements["group"]) {
-  const { scene } = useGLTF("/assets/landing_page_motor.glb");
-
-  useFrame((state) => {
-    const t = state.clock.getElapsedTime();
-    scene.rotation.y = t * 0.25; // gentle rotation
-  });
-
-  useMemo(() => {
-    scene.traverse((obj: any) => {
-      if (obj.isMesh && obj.material) {
-        if ("metalness" in obj.material) obj.material.metalness = 1;
-        if ("roughness" in obj.material) obj.material.roughness = 0.2;
-        if ("envMapIntensity" in obj.material) obj.material.envMapIntensity = 1.2;
-        obj.castShadow = true;
-        obj.receiveShadow = true;
-      }
-    });
-  }, [scene]);
-
-  return <primitive object={scene} {...props} />;
-}
 
 // Loader for the 3D canvas
 function CanvasLoader() {
