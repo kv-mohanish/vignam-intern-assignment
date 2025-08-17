@@ -17,7 +17,7 @@ const COPY = {
 };
 
 // 3D Model Component
-function MotorModel(props: jsx.IntrinsicElements["group"]) {
+function MotorModel(props: JSX.IntrinsicElements["group"]) {
   const { scene } = useGLTF("/assets/landing_page_motor.glb");
 
   useFrame((state) => {
